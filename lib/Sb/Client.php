@@ -8,7 +8,7 @@ class Client
 	/**
 	 * client version
 	 */
-	const VERSION = '0.1';
+	const VERSION = '1.0';
 
 	/**
 	 * spambarrier api url
@@ -48,6 +48,156 @@ class Client
 	public function getDomains()
 	{
 		return $this->apiRequest('get-domains');
+	}
+
+	/**
+	 * add a domain
+	 *
+	 * @param $domain
+	 * @param $host
+	 * @param null $username
+	 * @param null $password
+	 * @return object
+	 * @throws Exception
+	 */
+	public function addDomain($domain, $host, $username = null, $password = null)
+	{
+		return $this->apiRequest('add-domain', array(
+			'domain' => $domain,
+			'host' => $host,
+			'username' => $username,
+			'password' => $password
+		));
+	}
+
+	/**
+	 * edit a domain
+	 *
+	 * @param $domain
+	 * @param $host
+	 * @param null $username
+	 * @param null $password
+	 * @return object
+	 * @throws Exception
+	 */
+	public function editDomain($domain, $host, $username = null, $password = null)
+	{
+		return $this->apiRequest('edit-domain', array(
+			'domain' => $domain,
+			'host' => $host,
+			'username' => $username,
+			'password' => $password
+		));
+	}
+
+	/**
+	 * delete a domain
+	 *
+	 * @param $domain
+	 * @return object
+	 * @throws Exception
+	 */
+	public function deleteDomain($domain)
+	{
+		return $this->apiRequest('delete-domain', array(
+			'domain' => $domain
+		));
+	}
+
+	/**
+	 * get filter settings for a domain
+	 *
+	 * @param $domain
+	 * @return object
+	 * @throws Exception
+	 */
+	public function getFilterSettings($domain)
+	{
+		return $this->apiRequest('get-filter-settings', array(
+			'domain' => $domain
+		));
+	}
+
+	/**
+	 * set filter settings for a domain
+	 *
+	 * @param $domain
+	 * @param $spamTreatment
+	 * @param $spamThreshold
+	 * @param $virusTreatment
+	 * @param $greylisting
+	 * @return object
+	 * @throws Exception
+	 */
+	public function setFilterSettings($domain, $spamTreatment, $spamThreshold, $virusTreatment, $greylisting)
+	{
+		return $this->apiRequest('set-filter-settings', array(
+			'domain' => $domain,
+			'spam_treatment' => $spamTreatment,
+			'spam_threshold' => $spamThreshold,
+			'virus_treatment' => $virusTreatment,
+			'greylisting' => $greylisting
+		));
+	}
+
+	/**
+	 * confirm domain after setting txt record
+	 *
+	 * @param $domain
+	 * @return object
+	 * @throws Exception
+	 */
+	public function confirmTxtRecord($domain)
+	{
+		return $this->apiRequest('confirm-txt-record', array(
+			'domain' => $domain
+		));
+	}
+
+	/**
+	 * get quarantine contents for a domain
+	 *
+	 * @param $domain
+	 * @return object
+	 * @throws Exception
+	 */
+	public function getQuarantine($domain)
+	{
+		return $this->apiRequest('get-quarantine', array(
+			'domain' => $domain
+		));
+	}
+
+	/**
+	 * resend a quarantined message to the original recipient
+	 *
+	 * @param $domain
+	 * @param $messageId
+	 * @return object
+	 * @throws Exception
+	 */
+	public function resendQuarantineMessage($domain, $messageId)
+	{
+		return $this->apiRequest('resend-quarantine-message', array(
+			'domain' => $domain,
+			'message_id' => $messageId
+		));
+	}
+
+	/**
+	 * delete a quarantined message
+	 *
+	 * @param $domain
+	 * @param $messageId
+	 * @return object
+	 * @throws Exception
+	 */
+	public function deleteQuarantineMessage($domain, $messageId)
+	{
+		return $this->apiRequest('delete-quarantine-message', array(
+			'domain' => $domain,
+			'message_id' => $messageId
+		));
 	}
 
 	/**
