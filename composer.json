@@ -1,0 +1,25 @@
+{
+  "name": "spambarrier/spambarrier-api-php",
+  "type": "library",
+  "description": "PHP wrapper for spambarrier API.",
+  "homepage": "https://github.com/spambarrier/spambarrier-api-php",
+  "keywords": ["spambarrier", "api", "php", "antispam"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Daniel Jost",
+      "homepage": "http://www.spambarrier.de",
+      "email": "daniel.jost@spambarrier.de"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "ext-curl": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.1"
+  },
+  "autoload": {
+    "psr-4": { "": "lib/" }
+  }
+}
