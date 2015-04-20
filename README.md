@@ -13,7 +13,7 @@ use spambarrier api with php
 
 ```php
 # create the client with account-id and api-key
-$client = new Client(YOUR_ACCOUNT_ID, 'YOUR_API_KEY');
+$client = new Sb\Client(YOUR_ACCOUNT_ID, 'YOUR_API_KEY');
 
 # get list of all domains in account
 var_dump($client->getDomains());
