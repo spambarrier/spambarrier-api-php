@@ -11,34 +11,34 @@ use spambarrier api with php
 	
 # usage
 
-	```php
-	# create the client with account-id and api-key
-	$client = new Client(YOUR_ACCOUNT_ID, 'YOUR_API_KEY');
+```php
+# create the client with account-id and api-key
+$client = new Client(YOUR_ACCOUNT_ID, 'YOUR_API_KEY');
 
-	# get list of all domains in account
-	var_dump($client->getDomains());
+# get list of all domains in account
+var_dump($client->getDomains());
 
-	# add domain
-	var_dump($client->addDomain('example.org', 'target.example.org'));
+# add domain
+var_dump($client->addDomain('example.org', 'target.example.org'));
 
-	# edit domain
-	var_dump($client->editDomain('example.org', 'another-target.example.org'));
+# edit domain
+var_dump($client->editDomain('example.org', 'another-target.example.org'));
 
-	# delete domain
-	var_dump($client->deleteDomain('example.org'));
+# delete domain
+var_dump($client->deleteDomain('example.org'));
 
-	# get filter settings for domain
-	var_dump($client->getFilterSettings('example.org'));
+# get filter settings for domain
+var_dump($client->getFilterSettings('example.org'));
 
-	# set filter settings for domain
-	var_dump($client->setFilterSettings('example.org', 'quarantine', 10, 'quarantine', false));
+# set filter settings for domain
+var_dump($client->setFilterSettings('example.org', 'quarantine', 10, 'quarantine', false));
 
-	# get quarantine contents for domain
-	var_dump($client->getQuarantine('example.org'));
+# get quarantine contents for domain
+var_dump($client->getQuarantine('example.org'));
 
-	# resend a quarantined message
-	var_dump($client->resendQuarantineMessage('example.org', MESSAGE_ID));
+# resend a quarantined message
+var_dump($client->resendQuarantineMessage('example.org', MESSAGE_ID));
 
-	# delete a quarantined message
-	var_dump($client->deleteQuarantineMessage('example.org', MESSAGE_ID));
-	```
+# delete a quarantined message
+var_dump($client->deleteQuarantineMessage('example.org', MESSAGE_ID));
+```
