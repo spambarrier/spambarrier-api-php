@@ -210,7 +210,7 @@ class Client
 	 * @return object
 	 * @throws Exception
 	 */
-	public function getDomainStatistics($domain, $from, $to, $interval = 'hour')
+	public function getDomainStatistics($domain, $from, $to, $interval = 'day')
 	{
 		return $this->apiRequest('get-domain-statistics', array(
 			'domain' => $domain,
