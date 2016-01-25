@@ -41,4 +41,7 @@ var_dump($client->resendQuarantineMessage('example.org', MESSAGE_ID));
 
 # delete a quarantined message
 var_dump($client->deleteQuarantineMessage('example.org', MESSAGE_ID));
+
+# get domain statistics
+var_dump($client->getDomainStatistics('example.org', '2016-01-01', '2016-01-31', 'day'));
 ```
