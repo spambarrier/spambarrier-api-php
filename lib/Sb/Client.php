@@ -201,6 +201,26 @@ class Client
 	}
 
 	/**
+	 * get domain statistics
+	 *
+	 * @param $domain
+	 * @param $from
+	 * @param $to
+	 * @param $interval
+	 * @return object
+	 * @throws Exception
+	 */
+	public function getDomainStatistics($domain, $from, $to, $interval = 'hour')
+	{
+		return $this->apiRequest('get-domain-statistics', array(
+			'domain' => $domain,
+			'from' => $from,
+			'to' => $to,
+			'interval' => $interval
+		));
+	}
+
+	/**
 	 * do api request
 	 *
 	 * @param $method
