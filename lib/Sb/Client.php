@@ -158,13 +158,19 @@ class Client
 	 * get quarantine contents for a domain
 	 *
 	 * @param $domain
+	 * @param $searchFrom
+	 * @param $searchTo
+	 * @param $searchSubject
 	 * @return object
 	 * @throws Exception
 	 */
-	public function getQuarantine($domain)
+	public function getQuarantine($domain, $searchFrom = null, $searchTo = null, $searchSubject = null)
 	{
 		return $this->apiRequest('get-quarantine', array(
-			'domain' => $domain
+			'domain' => $domain,
+            'search_from' => $searchFrom,
+            'search_to' => $searchTo,
+            'search_subject' => $searchSubject,
 		));
 	}
 
