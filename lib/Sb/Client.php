@@ -164,10 +164,12 @@ class Client
 	 * @return object
 	 * @throws Exception
 	 */
-	public function getQuarantine($domain, $searchFrom = null, $searchTo = null, $searchSubject = null)
+	public function getQuarantine($domain, $from = null, $to = null, $searchFrom = null, $searchTo = null, $searchSubject = null)
 	{
 		return $this->apiRequest('get-quarantine', array(
 			'domain' => $domain,
+            'from' => $from,
+            'to' => $to,
             'search_from' => $searchFrom,
             'search_to' => $searchTo,
             'search_subject' => $searchSubject,
