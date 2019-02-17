@@ -168,6 +168,22 @@ class Client
 		));
 	}
 
+    /**
+     * get quarantine message for a domain and messageId
+     *
+     * @param $domain
+     * @param $messageId
+     * @return object
+     * @throws Exception
+     */
+    public function getQuarantineMessage($domain, $messageId)
+    {
+        return $this->apiRequest('get-quarantine-message', array(
+            'domain' => $domain,
+            'message_id' => $messageId,
+        ));
+    }
+
 	/**
 	 * resend a quarantined message to the original recipient
 	 *

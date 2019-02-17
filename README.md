@@ -36,6 +36,9 @@ var_dump($client->setFilterSettings('example.org', 'quarantine', 10, 'quarantine
 # get quarantine contents for domain
 var_dump($client->getQuarantine('example.org'));
 
+# get quarantine message for domain and message id
+var_dump($client->getQuarantineMessage('example.org', MESSAGE_ID));
+
 # resend a quarantined message
 var_dump($client->resendQuarantineMessage('example.org', MESSAGE_ID));
 
