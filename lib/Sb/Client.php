@@ -158,6 +158,8 @@ class Client
 	 * get quarantine contents for a domain
 	 *
 	 * @param $domain
+	 * @param $from
+	 * @param $to
 	 * @param $searchFrom
 	 * @param $searchTo
 	 * @param $searchSubject
