@@ -175,7 +175,7 @@ class Client
             'from' => $from,
             'to' => $to,
             'sort' => $sort,
-            'sortReverse' => $sortReverse,
+            'sort_reverse' => $sortReverse,
             'search_from' => $searchFrom,
             'search_to' => $searchTo,
             'search_subject' => $searchSubject,
