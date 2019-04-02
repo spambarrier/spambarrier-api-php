@@ -250,6 +250,52 @@ class Client
 		));
 	}
 
+    /**
+     * get whitelist entries
+     *
+     * @param $domain
+     * @return object
+     * @throws Exception
+     */
+    public function getWhitelistEntries($domain)
+    {
+        return $this->apiRequest('get-whitelist-entries', array(
+            'domain' => $domain,
+        ));
+    }
+
+    /**
+     * add whitelist entry
+     *
+     * @param $domain
+     * @param $from
+     * @param $to
+     * @return object
+     * @throws Exception
+     */
+    public function addWhitelistEntry($domain, $from, $to)
+    {
+        return $this->apiRequest('add-whitelist-entry', array(
+            'domain' => $domain,
+            'from' => $from,
+            'to' => $to,
+        ));
+    }
+
+    /**
+     * @param $domain
+     * @param $id
+     * @return object
+     * @throws Exception
+     */
+    public function deleteWhitelistEntry($domain, $id)
+    {
+        return $this->apiRequest('delete-whitelist-entry', array(
+            'domain' => $domain,
+            'id'=> $id,
+        ));
+    }
+
 	/**
 	 * do api request
 	 *
